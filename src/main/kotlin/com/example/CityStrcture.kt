@@ -5,4 +5,4 @@ import io.micronaut.serde.annotation.Serdeable
 
 @Introspected
 @Serdeable.Deserializable
-data class CityEntity (val city : String?, val pincode : Int?)
+data class CityStructure (val newName : String?, val pincode : Int?)
