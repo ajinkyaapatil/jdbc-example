@@ -26,7 +26,6 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     testImplementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari:4.3.0")
     implementation("io.micronaut.data:micronaut-data-jdbc")
     runtimeOnly("org.postgresql:postgresql")
 }

@@ -1,11 +1,11 @@
 package com.example
+import com.example.Structure.CityStructure
+import com.example.Structure.UserEntity
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
-import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Post
 import io.micronaut.http.annotation.Put
 import jakarta.inject.Inject
-import java.sql.DriverManager
 
 @Controller("/")
 class AddController{
@@ -16,7 +16,7 @@ class AddController{
     @Post("/add/user")
     fun addUser(@Body user : UserEntity): String {
 
-        dbManager.execute("INSERT INTO userdata VALUES (${user.id}, '${user.name}', '${user.city}', '${user.pincode}'); ")
+        dbManager.addUser(user.id, user.name, user.city, user.pincode)
 
         return "Data Added Success !!!"
     }
