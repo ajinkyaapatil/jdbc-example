@@ -23,9 +23,7 @@ class AddController{
 
     @Put("/update/city")
     fun upDateUser(@Body cityS : CityStructure) : String{
-        dbManager.execute("UPDATE citydetails SET city = '${cityS.newName}' WHERE pincode = ${cityS.pincode}")
-        dbManager.execute("UPDATE userdata SET city = '${cityS.newName}' WHERE pincode = ${cityS.pincode}")
-
+        dbManager.editCity(cityS.newName, cityS.pincode)
         return "UPDATED CITY NAME"
     }
 }
