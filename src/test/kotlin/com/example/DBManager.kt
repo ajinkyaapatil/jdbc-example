@@ -26,7 +26,7 @@ class DBMangerTest {
     }
 
     @Test
-    fun `user can be added in database using the id, name, city and pincode`() {
+    fun `should return true when dbManager adds a user in database using the id, name, city and pincode`() {
 
         val response: Boolean = dbManager.addUser(50, "Kartikay", "HP", 123456)
 
@@ -34,12 +34,21 @@ class DBMangerTest {
     }
 
     @Test
-    fun `changing the city details changes in the database`() {
+    fun `should return true when dbManager changes the city name as per provided pincode`() {
 
         val response = dbManager.editCity("PCMC", 424201)
 
         assertTrue(response)
     }
+
+    @Test
+    fun `should return false when dbManager changes the city name when provided with pincode not present in DB`() {
+
+        val response = dbManager.editCity("PCMC", 424252)
+
+        assertFalse(response)
+    }
+
 
 
 }
